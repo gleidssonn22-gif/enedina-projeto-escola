@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz — O Quanto Você Sabe?</title>
+  <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    .quiz-container {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .pergunta {
+      background: rgba(42,42,42,0.5);
+      padding: 1.5rem;
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      border-left: 3px solid var(--dourado);
+    }
+    .pergunta h3 {
+      margin-top: 0;
+      color: var(--dourado-claro);
+    }
+    .opcao {
+      display: block;
+      padding: 0.7rem 1rem;
+      margin: 0.5rem 0;
+      background: rgba(255,255,255,0.05);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 2px solid transparent;
+    }
+    .opcao:hover {
+      border-color: var(--dourado);
+      background: rgba(212,175,55,0.1);
+    }
+    .correta {
+      background: rgba(0,107,60,0.2) !important;
+      border-color: var(--verde-floresta) !important;
+    }
+    .incorreta {
+      background: rgba(158,27,50,0.2) !important;
+      border-color: var(--vermelho) !important;
+    }
+    .resultado {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(212,175,55,0.1);
+      border-radius: 6px;
+      margin-top: 2rem;
+      display: none;
+    }
+    .botao-reiniciar {
+      margin-top: 1rem;
+      background: transparent;
+      border: 2px solid var(--dourado);
+      color: var(--dourado);
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .botao-reiniciar:hover {
+      background: var(--dourado);
+      color: var(--preto-profundo);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kente-border"></div>
+
+  <header>
+    <nav>
+      <a href="index.html" class="logo">⚙️ ENEDINA ALVES MARQUES <span>| Vida e Legado</span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="biografia.html">Biografia</a></li>
+        <li><a href="carreira.html">Carreira</a></li>
+        <li><a href="legado.html">Legado</a></li>
+        <li><a href="linha-do-tempo.html">Linha do Tempo</a></li>
+        <li><a href="quiz.html" class="ativo">Quiz 🎮</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li><a href="fontes.html">Fontes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="secao">
+      <div class="cabecalho-secao">
+        <span>🎮</span>
+        <h2>Quiz: O Quanto Você Sabe?</h2>
+      </div>
+      <p style="text-align: center; font-size: 1.1rem;">Teste seus conhecimentos sobre a vida de Enedina Alves Marques!</p>
+      
+      <div class="quiz-container">
+        <!-- Pergunta 1 -->
+        <div class="pergunta" id="p1">
+          <h3>1. Em qual cidade Enedina Alves Marques nasceu?</h3>
+          <label class="opcao" onclick="responder(1, 'a', this)">A) São Paulo - SP</label>
+          <label class="opcao" onclick="responder(1, 'b', this)">B) Curitiba - PR</label>
+          <label class="opcao" onclick="responder(1, 'c', this)">C) Rio de Janeiro - RJ</label>
+          <label class="opcao" onclick="responder(1, 'd', this)">D) Salvador - BA</label>
+        </div>
+
+        <!-- Pergunta 2 -->
+        <div class="pergunta" id="p2">
+          <h3>2. Em que ano ela se tornou a primeira engenheira negra do Brasil?</h3>
+          <label class="opcao" onclick="responder(2, 'a', this)">A) 1930</label>
+          <label class="opcao" onclick="responder(2, 'b', this)">B) 1945</label>
+          <label class="opcao" onclick="responder(2, 'c', this)">C) 1955</label>
+          <label class="opcao" onclick="responder(2, 'd', this)">D) 1960</label>
+        </div>
+
+        <!-- Pergunta 3 -->
+        <div class="pergunta" id="p3">
+          <h3>3. Qual curso Enedina concluiu na universidade?</h3>
+          <label class="opcao" onclick="responder(3, 'a', this)">A) Medicina</label>
+          <label class="opcao" onclick="responder(3, 'b', this)">B) Direito</label>
+          <label class="opcao" onclick="responder(3, 'c', this)">C) Engenharia Civil</label>
+          <label class="opcao" onclick="responder(3, 'd', this)">D) Pedagogia</label>
+        </div>
+
+        <!-- Pergunta 4 -->
+        <div class="pergunta" id="p4">
+          <h3>4. Como Enedina pagou seus estudos?</h3>
+          <label class="opcao" onclick="responder(4, 'a', this)">A) Com dinheiro do governo</label>
+          <label class="opcao" onclick="responder(4, 'b', this)">B) Trabalhando como empregada doméstica</label>
+          <label class="opcao" onclick="responder(4, 'c', this)">C) Ganhadou uma bolsa integral</label>
+          <label class="opcao" onclick="responder(4, 'd', this)">D) Seus pais eram ricos</label>
+        </div>
+
+        <!-- Pergunta 5 -->
+        <div class="pergunta" id="p5">
+          <h3>5. O que significa o símbolo Sankofa usado neste site?</h3>
+          <label class="opcao" onclick="responder(5, 'a', this)">A) O futuro não importa</label>
+          <label class="opcao" onclick="responder(5, 'b', this)">B) Esquecer o passado</label>
+          <label class="opcao" onclick="responder(5, 'c', this)">C) Aprender com o passado para construir o futuro</label>
+          <label class="opcao" onclick="responder(5, 'd', this)">D) Sempre olhar para frente</label>
+        </div>
+
+        <!-- Resultado -->
+        <div class="resultado" id="resultado">
+          <h3>🎉 Seu Resultado</h3>
+          <p id="pontuacao"></p>
+          <p id="mensagem-final"></p>
+          <button class="botao-reiniciar" onclick="reiniciarQuiz()">Tentar Novamente</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="sankofa-footer">🦅</div>
+    <p><strong>Enedina Alves Marques — Vida e Legado</strong></p>
+    <p>Tema: Consciência Negra • Novembro de 2026</p>
+    <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">Sankofa: "Aprender com o passado para construir o futuro"</p>
+  </footer>
+
+  <script>
+    const respostasCorretas = {
+      1: 'b',
+      2: 'b',
+      3: 'c',
+      4: 'b',
+      5: 'c'
+    };
+    
+    let acertos = 0;
+    let respondidas = {1: false, 2: false, 3: false, 4: false, 5: false};
+
+    function responder(numero, letra, elemento) {
+      if (respondidas[numero]) return;
+      respondidas[numero] = true;
+      
+      const botoes = document.querySelectorAll(`#p${numero} .opcao`);
+      botoes.forEach(b => b.style.pointerEvents = 'none');
+      
+      if (letra === respostasCorretas[numero]) {
+        elemento.classList.add('correta');
+        acertos++;
+      } else {
+        elemento.classList.add('incorreta');
+        botoes.forEach(b => {
+          if (b.getAttribute('onclick').includes(`'${respostasCorretas[numero]}'`)) {
+            b.classList.add('correta');
+          }
+        });
+      }
+      
+      verificarFim();
+    }
+
+    function verificarFim() {
+      const totalRespondidas = Object.values(respondidas).filter(v => v).length;
+      if (totalRespondidas === 5) {
+        mostrarResultado();
+      }
+    }
+
+    function mostrarResultado() {
+      const divResultado = document.getElementById('resultado');
+      divResultado.style.display = 'block';
+      document.getElementById('pontuacao').innerHTML = 
+        `Você acertou <strong>${acertos} de 5</strong> perguntas!`;
+      
+      const msg = document.getElementById('mensagem-final');
+      if (acertos === 5) {
+        msg.textContent = '🏆 Perfeito! Você conhece muito bem a história de Enedina!';
+      } else if (acertos >= 3) {
+        msg.textContent = '👏 Muito bem! Continue estudando e acertará todas!';
+      } else {
+        msg.textContent = '📖 Não desista! Leia novamente as páginas do site e tente de novo!';
+      }
+      
+      divResultado.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function reiniciarQuiz() {
+      location.reload();
+    }
+  </script>
+
+</body>
+</html>
