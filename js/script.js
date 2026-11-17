@@ -62,7 +62,7 @@ const observador = new IntersectionObserver((entradas) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.secao').forEach(secao => {
+document.querySelectorAll('.secao').secao?.forEach?.(secao => {
   secao.style.opacity = '0';
   secao.style.transform = 'translateY(25px)';
   secao.style.transition = 'opacity 0.7s ease, transform 0.7s ease';

@@ -127,7 +127,7 @@
           <h3>4. Como Enedina pagou seus estudos?</h3>
           <label class="opcao" onclick="responder(4, 'a', this)">A) Com dinheiro do governo</label>
           <label class="opcao" onclick="responder(4, 'b', this)">B) Trabalhando como empregada doméstica</label>
-          <label class="opcao" onclick="responder(4, 'c', this)">C) Ganhadou uma bolsa integral</label>
+          <label class="opcao" onclick="responder(4, 'c', this)">C) Ganhou uma bolsa integral</label>
           <label class="opcao" onclick="responder(4, 'd', this)">D) Seus pais eram ricos</label>
         </div>
 
@@ -159,16 +159,9 @@
   </footer>
 
   <script>
-    const respostasCorretas = {
-      1: 'b',
-      2: 'b',
-      3: 'c',
-      4: 'b',
-      5: 'c'
-    };
-    
+    const respostasCorretas = { 1: 'b', 2: 'b', 3: 'c', 4: 'b', 5: 'c' };
     let acertos = 0;
-    let respondidas = {1: false, 2: false, 3: false, 4: false, 5: false};
+    let respondidas = { 1: false, 2: false, 3: false, 4: false, 5: false };
 
     function responder(numero, letra, elemento) {
       if (respondidas[numero]) return;
@@ -188,7 +181,6 @@
           }
         });
       }
-      
       verificarFim();
     }
 
@@ -202,25 +194,32 @@
     function mostrarResultado() {
       const divResultado = document.getElementById('resultado');
       divResultado.style.display = 'block';
-      document.getElementById('pontuacao').innerHTML = 
-        `Você acertou <strong>${acertos} de 5</strong> perguntas!`;
+      document.getElementById('pontuacao').innerHTML = `Você acertou <strong>${acertos} de 5</strong> perguntas!`;
       
       const msg = document.getElementById('mensagem-final');
       if (acertos === 5) {
-        msg.textContent = '🏆 Perfeito! Você conhece muito bem a história de Enedina!';
+        msg.textContent = "🏆 Excelente! Você prestou muita atenção na história de Enedina!";
       } else if (acertos >= 3) {
-        msg.textContent = '👏 Muito bem! Continue estudando e acertará todas!';
+        msg.textContent = "👏 Muito bom! Você conhece bem a trajetória desta grande pioneira.";
       } else {
-        msg.textContent = '📖 Não desista! Leia novamente as páginas do site e tente de novo!';
+        msg.textContent = "📖 Que tal dar mais uma olhada na biografia e tentar de novo?";
       }
-      
-      divResultado.scrollIntoView({ behavior: 'smooth' });
     }
 
     function reiniciarQuiz() {
-      location.reload();
+      acertos = 0;
+      respondidas = { 1: false, 2: false, 3: false, 4: false, 5: false };
+      document.getElementById('resultado').style.display = 'none';
+      
+      document.querySelectorAll('.pergunta').forEach((p, idx) => {
+        const num = idx + 1;
+        const botoes = document.querySelectorAll(`#p${num} .opcao`);
+        botoes.forEach(b => {
+          b.style.pointerEvents = 'auto';
+          b.classList.remove('correta', 'incorreta');
+        });
+      });
     }
   </script>
-
 </body>
 </html>
