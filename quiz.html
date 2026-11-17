@@ -92,7 +92,7 @@
         <span>🎮</span>
         <h2>Quiz: O Quanto Você Sabe?</h2>
       </div>
-      <p style="text-align: center; font-size: 1.1rem;">Teste seus conhecimentos sobre a vida de Enedina Alves Marques!</p>
+      <p style="text-align: center; font-size: 1.1rem;">Teste seus conhecimentos sobre a vida e o legado de Enedina Alves Marques!</p>
       
       <div class="quiz-container">
         <!-- Pergunta 1 -->
@@ -124,11 +124,11 @@
 
         <!-- Pergunta 4 -->
         <div class="pergunta" id="p4">
-          <h3>4. Como Enedina pagou seus estudos?</h3>
+          <h3>4. Como Enedina pagou seus estudos na juventude?</h3>
           <label class="opcao" onclick="responder(4, 'a', this)">A) Com dinheiro do governo</label>
-          <label class="opcao" onclick="responder(4, 'b', this)">B) Trabalhando como empregada doméstica</label>
-          <label class="opcao" onclick="responder(4, 'c', this)">C) Ganhou uma bolsa integral</label>
-          <label class="opcao" onclick="responder(4, 'd', this)">D) Seus pais eram ricos</label>
+          <label class="opcao" onclick="responder(4, 'b', this)">B) Trabalhando como empregada doméstica e babá</label>
+          <label class="opcao" onclick="responder(4, 'c', this)">C) Ganhou uma bolsa integral de mecenas</label>
+          <label class="opcao" onclick="responder(4, 'd', this)">D) Sua família era proprietária de terras</label>
         </div>
 
         <!-- Pergunta 5 -->
@@ -137,7 +137,52 @@
           <label class="opcao" onclick="responder(5, 'a', this)">A) O futuro não importa</label>
           <label class="opcao" onclick="responder(5, 'b', this)">B) Esquecer o passado</label>
           <label class="opcao" onclick="responder(5, 'c', this)">C) Aprender com o passado para construir o futuro</label>
-          <label class="opcao" onclick="responder(5, 'd', this)">D) Sempre olhar para frente</label>
+          <label class="opcao" onclick="responder(5, 'd', this)">D) Sempre olhar estritamente para a frente</label>
+        </div>
+
+        <!-- Pergunta 6 -->
+        <div class="pergunta" id="p6">
+          <h3>6. Qual foi a principal obra de grande porte na qual Enedina trabalhou no Paraná?</h3>
+          <label class="opcao" onclick="responder(6, 'a', this)">A) Usina Hidrelétrica Capivari-Cachoeira</label>
+          <label class="opcao" onclick="responder(6, 'b', this)">B) Usina de Itaipu</label>
+          <label class="opcao" onclick="responder(6, 'c', this)">C) Ponte Rio-Niterói</label>
+          <label class="opcao" onclick="responder(6, 'd', this)">D) Metrô de Curitiba</label>
+        </div>
+
+        <!-- Pergunta 7 -->
+        <div class="pergunta" id="p7">
+          <h3>7. Em qual instituição de ensino superior Enedina se formou?</h3>
+          <label class="opcao" onclick="responder(7, 'a', this)">A) Universidade de São Paulo (USP)</label>
+          <label class="opcao" onclick="responder(7, 'b', this)">B) Universidade Federal do Paraná (UFPR)</label>
+          <label class="opcao" onclick="responder(7, 'c', this)">C) Universidade Federal do Rio de Janeiro (UFRJ)</label>
+          <label class="opcao" onclick="responder(7, 'd', this)">D) Pontifícia Universidade Católica do Paraná (PUCPR)</label>
+        </div>
+
+        <!-- Pergunta 8 -->
+        <div class="pergunta" id="p8">
+          <h3>8. Além de engenheira, qual outra área Enedina exerceu com destaque no início de sua trajetória profissional?</h3>
+          <label class="opcao" onclick="responder(8, 'a', this)">A) Enfermagem</label>
+          <label class="opcao" onclick="responder(8, 'b', this)">B) Magistério (professora primária)</label>
+          <label class="opcao" onclick="responder(8, 'c', this)">C) Jornalismo</label>
+          <label class="opcao" onclick="responder(8, 'd', this)">D) Arquitetura paisagística</label>
+        </div>
+
+        <!-- Pergunta 9 -->
+        <div class="pergunta" id="p9">
+          <h3>9. Onde foi inaugurada uma estátua em homenagem a Enedina Alves Marques em janeiro de 2024?</h3>
+          <label class="opcao" onclick="responder(9, 'a', this)">A) Na Avenida Paulista, São Paulo</label>
+          <label class="opcao" onclick="responder(9, 'b', this)">B) Na Rua XV de Novembro, Curitiba</label>
+          <label class="opcao" onclick="responder(9, 'c', this)">C) No Pelourinho, Salvador</label>
+          <label class="opcao" onclick="responder(9, 'd', this)">D) Na Praça dos Três Poderes, Brasília</label>
+        </div>
+
+        <!-- Pergunta 10 -->
+        <div class="pergunta" id="p10">
+          <h3>10. Por quantas décadas aproximadamente Enedina atuou como engenheira prestando serviços públicos no Paraná?</h3>
+          <label class="opcao" onclick="responder(10, 'a', this)">A) Cerca de 5 anos</label>
+          <label class="opcao" onclick="responder(10, 'b', this)">B) Cerca de 10 anos</label>
+          <label class="opcao" onclick="responder(10, 'c', this)">C) Mais de 27 anos</label>
+          <label class="opcao" onclick="responder(10, 'd', this)">D) Exatamente 50 anos</label>
         </div>
 
         <!-- Resultado -->
@@ -159,9 +204,18 @@
   </footer>
 
   <script>
-    const respostasCorretas = { 1: 'b', 2: 'b', 3: 'c', 4: 'b', 5: 'c' };
+    const respostasCorretas = { 
+      1: 'b', 2: 'b', 3: 'c', 4: 'b', 5: 'c', 
+      6: 'a', 7: 'b', 8: 'b', 9: 'b', 10: 'c' 
+    };
     let acertos = 0;
-    let respondidas = { 1: false, 2: false, 3: false, 4: false, 5: false };
+    let respondidas = {};
+    const totalPerguntas = 10;
+
+    // Inicializa o objeto de controle de respondidas dinamicamente
+    for (let i = 1; i <= totalPerguntas; i++) {
+      respondidas[i] = false;
+    }
 
     function responder(numero, letra, elemento) {
       if (respondidas[numero]) return;
@@ -186,7 +240,7 @@
 
     function verificarFim() {
       const totalRespondidas = Object.values(respondidas).filter(v => v).length;
-      if (totalRespondidas === 5) {
+      if (totalRespondidas === totalPerguntas) {
         mostrarResultado();
       }
     }
@@ -194,13 +248,15 @@
     function mostrarResultado() {
       const divResultado = document.getElementById('resultado');
       divResultado.style.display = 'block';
-      document.getElementById('pontuacao').innerHTML = `Você acertou <strong>${acertos} de 5</strong> perguntas!`;
+      document.getElementById('pontuacao').innerHTML = `Você acertou <strong>${acertos} de ${totalPerguntas}</strong> perguntas!`;
       
       const msg = document.getElementById('mensagem-final');
-      if (acertos === 5) {
-        msg.textContent = "🏆 Excelente! Você prestou muita atenção na história de Enedina!";
-      } else if (acertos >= 3) {
-        msg.textContent = "👏 Muito bom! Você conhece bem a trajetória desta grande pioneira.";
+      if (acertos === totalPerguntas) {
+        msg.textContent = "🏆 Perfeito! Você gabaritou e domina profundamente a história de Enedina Alves Marques!";
+      } else if (acertos >= 7) {
+        msg.textContent = "👏 Excelente! Você conhece muito bem a trajetória desta grande pioneira da engenharia nacional.";
+      } else if (acertos >= 4) {
+        msg.textContent = "👍 Bom trabalho! Mas ainda dá para explorar mais a biografia e gabaritar na próxima.";
       } else {
         msg.textContent = "📖 Que tal dar mais uma olhada na biografia e tentar de novo?";
       }
@@ -208,7 +264,9 @@
 
     function reiniciarQuiz() {
       acertos = 0;
-      respondidas = { 1: false, 2: false, 3: false, 4: false, 5: false };
+      for (let i = 1; i <= totalPerguntas; i++) {
+        respondidas[i] = false;
+      }
       document.getElementById('resultado').style.display = 'none';
       
       document.querySelectorAll('.pergunta').forEach((p, idx) => {
